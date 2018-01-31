@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark nav-theme mb-4">
+  <a class="navbar-brand ml-3" routerLink="">
+    <h1 class="h2">
+      <span class="header-brand-text-alt">JOPPLER</span>
+    </h1>
+  </a>
+  <div class="header-divider d-lg-block d-none"></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+    aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [class.active]="isActive==i" *ngFor="let link of links; let i=index;" [class.li_divider]="link.order!=links.length-1">
+        <a class="nav-link" [routerLink]="link.path" (click)="toggleActive(i)">{{link.name}}</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav  mt-md-0" *ngIf="AuthService.status==false">
+      <li class="nav-item" [class.active]="isActiveAuth==0">
+        <a class="nav-link" routerLink="login" (click)="toggleActiveAuth(0)"><span class="glyphicons glyphicons-log-in"></span> login <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" [class.active]="isActiveAuth==1">
+        <a class="nav-link" routerLink="sign_up" (click)="toggleActiveAuth(1)">Signup</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav col-4 mt-md-0 dropdown justify-content-end" *ngIf="AuthService.status==true">
+      <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        {{AuthService.userName}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="/profile">Profile</a>
+        <a class="dropdown-item" routerLink="/employer_verification">Employer Verification</a>
+        <a class="dropdown-item" routerLink="/settings">Settings</a>
+        <button class="dropdown-item btn-link" (click)="AuthService.logout()">Sign Out</button>
+      </div>
+    </ul>
+  </div>
+</nav>

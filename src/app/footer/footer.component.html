@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-dark footer-theme" >
+ <div class=" navbar-collapse d-flex justify-content-center">
+    <ul class="navbar-nav">
+        <li class="nav-item" *ngFor="let link of links; let i=index;" [class.li_divider]="link.order!=links.length-1"> 
+          <a class="nav-link" [routerLink]="link.path">{{link.name}}</a>
+        </li>
+    </ul>
+  </div>
+</nav>

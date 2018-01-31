@@ -1,0 +1,30 @@
+<div class="container-fluid content">
+  <div class="row">
+    <div class="col-3 offset-9">
+      Sort:
+      <button class="btn btn-link" (click)="SortByReference()">References </button> |
+      <button class="btn btn-link" (click)="SortByDate()">Date</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="list-group">
+        <!--item1  -->
+        <div class="list-group-item  flex-column align-items-start" *ngFor="let item of listTobeDisplayed | sort:sortBy | paginate: { itemsPerPage: 10, currentPage: pageNo }; let index=index;">
+          <div class="d-flex w-100 justify-content-between">
+            <a class="mb-1 font-weight-bold h5 name" [routerLink]="['/view_profile', index]">{{item.firstname}}  {{item.lastname}}</a>
+            <small class="text-right h6 reference">{{GetPersonsService.getParticularPersonRefCount(item.firstname)}} Joppler References</small>
+          </div>
+          <p class="mb-1 position">{{item?.position}} </p>
+          <p class="mb-1 font-italic area">{{item.address+" "+item.city+" "+item.state+" "+item.country }}<small class="text-right pull-right date">{{item.date}} days ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-6 offset-3 d-flex justify-content-center">
+      <pagination-controls (pageChange)="pageNo = $event" class="my-pagination" directionLinks="true">
+      </pagination-controls>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+body
+{
+        position: relative;
+        min-height: 100vh;
+        background: rgba(241,242,243,.5);
+}
+.content 
+{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 65px;
+}
+.custom-control-label::after
+{
+    border: 1px solid #00000052;
+}
+.signUp-box-msg-Heading,.login-box-msg,.profile-box-msg,.emVerification-box-msg,.setting-box-msg {
+	margin-left: 9px;
+    border-left: 4px solid #000;
+    text-align: left;
+    padding: -1px 20px 20px 70px;
+    color: #0c0101;
+    text-transform: uppercase;
+	font-family: serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 1px 0px 1px rgb(247, 247, 247);
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.optionDisabled
+{
+    color:grey;
+}

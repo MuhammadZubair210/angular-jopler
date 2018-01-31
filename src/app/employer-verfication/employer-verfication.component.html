@@ -1,0 +1,86 @@
+<div class="content">
+  <div class="col-7 offset-2" *ngIf="displayMsg==true">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <p class="card-text">Validation email has been sent to your employers / clients / project sponsors</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10 col-sm-7 col-md-7 col-xl-7 offset-2" id="emVerification-box">
+
+      <div class="emVerification-box-body">
+        <p class="title">Your employer / client details</p>
+        <p style="color:red; text-align:center">{{error}}</p>
+        <form class="emVerification" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="form-group row mb-4">
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger mr-1" style="width:74%; display:inline !important;" placeholder="Employer / Client / Project (To be popluated)"
+                name="text1" [formControl]="myForm.controls['text1']">
+              <span id="msg1">Not yet validated</span>
+            </div>
+            <div class="col-9 mb-3">
+              <div formArrayName="email1s" *ngFor="let item of email1s.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="email1" class="form-control form-control-danger" style="width:94%" placeholder="Email Address (User Input)">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="email" class="form-control form-control-danger" placeholder="Email Address (User Input)" name="email1" [formControl]="myForm.controls['email1']">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("email1")'><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row mb-4">
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger mr-1" style="width:74%; display:inline !important;" placeholder="Employer / Client / Project (To be popluated)"
+                name="text2" [formControl]="myForm.controls['text2']">
+              <span id="msg2">Not yet validated</span>
+            </div>
+            <div class="col-9 mb-3">
+              <div formArrayName="email2s" *ngFor="let item of email2s.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="email2" class="form-control form-control-danger" style="width:94%" placeholder="Email Address (User Input)">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="email" class="form-control form-control-danger" placeholder="Email Address (User Input)" name="email2" [formControl]="myForm.controls['email2']">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("email2")'><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row mb-4">
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger mr-1" style="width:74%; display:inline !important;" placeholder="Employer / Client / Project (To be popluated)"
+                name="text3" [formControl]="myForm.controls['text3']">
+              <span id="msg3">Not yet validated</span>
+            </div>
+            <div class="col-9 mb-3">
+              <div formArrayName="email3s" *ngFor="let item of email3s.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="email3" class="form-control form-control-danger" style="width:94%" placeholder="Email Address (User Input)">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="email" class="form-control form-control-danger" placeholder="Email Address (User Input)" name="email3" required
+                  [formControl]="myForm.controls['email3']">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("email3")'><i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 offset-2">
+            <button type="submit" class="btn btn-primary mb-2" style="width:100%">Send for verification</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

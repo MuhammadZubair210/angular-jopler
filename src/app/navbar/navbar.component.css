@@ -1,0 +1,89 @@
+@font-face
+{
+    font-family:ElenaInitial;
+    src:url("../../assets/fonts/elenawebregular.woff2") format("woff2")
+}
+@font-face{
+    font-family:Elena;src:url("../../assets/fonts/elenawebregular.woff2") format("woff2")
+}
+@font-face{
+    font-family:MijaInitial;src:url("../../assets/fonts/mija_regular-webfont.woff2") format("woff2")
+}
+@font-face{
+    font-family:Mija;src:url("../../assets/fonts/mija_regular-webfont.woff2") format("woff2")
+}
+
+.nav-theme
+{
+    min-height: 4rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);  
+    background-color: #d33a2c;
+    border-bottom: 1px solid rgba(85,167,154,.6);
+    color: #1b1b1b;
+    padding: 25px 0;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    right: 0;
+}
+.nav-theme .navbar-nav .nav-link
+{
+    color: #fff !important;
+      font-family: Mija;
+      font-size: calc(.8em + .6vw);
+}
+.nav-theme .navbar-nav .active >.nav-link
+{
+    color: #000 !important;
+}
+.nav-theme  h1 span {
+    color: black !important;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px rgba(255, 251, 251, 0.46);
+}
+.header-divider
+{
+   
+    height: 40px;
+    display: block;
+    border-left:2px solid white; 
+    padding-right: 16px;
+}
+
+@media (min-width: 992px)
+{
+    .d-lg-block {
+    display: block!important;   
+    }
+}
+@media (max-width: 992px)
+{
+    .d-none {
+    display: none!important;
+    }
+}
+.btn-transparent
+{
+    background: transparent;
+    border: 0;
+}
+.dropdown-toggle::after {
+    display:none
+}
+#dropdownMenuButton
+{
+    color: #fff !important;
+      font-family: Mija;
+      font-size: calc(.8em + .6vw);
+}
+.dropdown-menu
+{
+         right: 0 !important;
+         left: auto ;
+}
+nav{
+    height: 4rem;
+}

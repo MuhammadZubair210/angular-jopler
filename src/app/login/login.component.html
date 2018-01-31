@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="row">
+    <div class="col-10 col-sm-4 col-md-4 col-xl-4" id="login-box">
+
+      <div class="login-box-body">
+        <p class="title">Sign in</p>
+        <p style="color:red; text-align:center">{{error}}</p>
+        <form class="login" [formGroup]="myForm" (ngSubmit)="onSubmitLogin(myForm)">
+          <div class="form-row">
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope-o fa-fw"></i></span>
+                </div>
+                <input type="email" class="form-control form-control-danger" [ngClass]="isInValid.email === 'none' ? '' : 'is-invalid'" placeholder="Email" name="email" [formControl]="myForm.controls['email']">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-key fa-fw"></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password" [ngClass]="isInValid.password === 'none' ? '' : 'is-invalid'" name="pass" [formControl]="myForm.controls['password']">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mb-2" >Sign In</button>
+          <a class="btn btn-link pull-right align-bottom" style="font-size: 12px;color:  #7b2b63;" routerLink="/recover_password">Forget password? </a>
+        </form>
+        <div class="row">
+          <div class="col-12">
+          </div>
+        </div>
+      </div>
+      <!-- /.login-box-body -->
+    </div>
+  </div>
+</div>

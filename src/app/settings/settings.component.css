@@ -1,0 +1,37 @@
+.setting-box-body {
+  background: #fff;
+  padding: 20px;
+  border-top: 0;
+  color: #666;
+  height:inherit;
+}
+.setting-box-body .form-control-feedback {
+  color: #777;
+}
+.setting
+{
+	    margin-top: 7%;
+}
+.custom-control-label
+{
+  color: black;
+}
+
+/* heading-title maintenance */
+.title{
+  margin-left: 9px;
+  text-align: left;
+  padding: -1px 20px 20px 70px;
+  color: #0c0101;
+  text-transform: uppercase;
+  font-family: serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-shadow: 1px 0px 1px rgb(247, 247, 247);
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.msg3{
+  font-size: 0.8rem;
+}

@@ -1,0 +1,207 @@
+<div class="content">
+  <div class="col-7 offset-2" *ngIf="displayMsg==true">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <div class="card-text">
+          <p>
+            Thank you for giving us your input!
+          </p>
+          <p>
+            Please visit us at <a href="www.joppler.com">www.joppler.com</a> to learn more about Joppler and finding the
+            best & rated talent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="displayMsg==false">
+
+    <div class="col-10 col-sm-7 col-md-7 col-xl-7 offset-2">
+      <p style="text-align:center; color:red;">{{error}}</p>
+      <p class="font-weight-bold">Thank you for taking out your valuable time to validate Wilhelm Cashen for his work. </p>
+      <div>
+        <div class="col-5 col-sm-5 offset-7 d-flex justify-content-between align-items-start">
+          <div class="ml-2">
+            <label>(Low)</label>
+          </div>
+          <div class="ml-2">
+            <label>1</label>
+          </div>
+          <div class="ml-2">
+            <label>2</label>
+          </div>
+          <div class="ml-3">
+            <label>3</label>
+          </div>
+          <div class="ml-2">
+            <label>4</label>
+          </div>
+          <div class="ml-2">
+            <label>5</label>
+          </div>
+          <div>
+            <label>(High)</label>
+          </div>
+        </div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="ml-5">
+          <div class="form-group row">
+            <div class="col-5">
+              Core Competency / Relevant Skills
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="coreCompetency" [formControl]="myForm.controls['coreCompetency']" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="coreCompetency" [formControl]="myForm.controls['coreCompetency']" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="coreCompetency" [formControl]="myForm.controls['coreCompetency']" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="coreCompetency" [formControl]="myForm.controls['coreCompetency']" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="coreCompetency" [formControl]="myForm.controls['coreCompetency']" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-5">
+              Social Skills / Communication
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ssc" [formControl]="myForm.controls['social']" id="ssc1" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ssc" [formControl]="myForm.controls['social']" id="ssc2" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ssc" [formControl]="myForm.controls['social']" id="ssc3" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ssc" [formControl]="myForm.controls['social']" id="ssc4" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ssc" [formControl]="myForm.controls['social']" id="ssc5" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-5">
+              Ethics & Character
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ec" [formControl]="myForm.controls['ethics']" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ec" [formControl]="myForm.controls['ethics']" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ec" [formControl]="myForm.controls['ethics']" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ec" [formControl]="myForm.controls['ethics']" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="ec" [formControl]="myForm.controls['ethics']" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-5">
+              Dependability
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="d" [formControl]="myForm.controls['dependability']" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="d" [formControl]="myForm.controls['dependability']" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="d" [formControl]="myForm.controls['dependability']" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="d" [formControl]="myForm.controls['dependability']" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="d" [formControl]="myForm.controls['dependability']" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-5">
+              Creativity
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="c" [formControl]="myForm.controls['creativity']" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="c" [formControl]="myForm.controls['creativity']" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="c" [formControl]="myForm.controls['creativity']" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="c" [formControl]="myForm.controls['creativity']" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="c" [formControl]="myForm.controls['creativity']" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-5">
+              Adaptability
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="a" [formControl]="myForm.controls['adaptability']" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="a" [formControl]="myForm.controls['adaptability']" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="a" [formControl]="myForm.controls['adaptability']" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="a" [formControl]="myForm.controls['adaptability']" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="a" [formControl]="myForm.controls['adaptability']" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-5">
+              Leadership / Ownership Skills
+            </div>
+            <div class="col-5 col-sm-3  offset-8 d-flex justify-content-between align-items-start">
+              <div class="ml-2" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="l" [formControl]="myForm.controls['leadership']" value="1">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="l" [formControl]="myForm.controls['leadership']" value="2">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="l" [formControl]="myForm.controls['leadership']" value="3">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="l" [formControl]="myForm.controls['leadership']" value="4">
+              </div>
+              <div class="ml-1" style="margin-top:-17px">
+                <input class="form-check-input" type="radio" name="l" [formControl]="myForm.controls['leadership']" value="5">
+              </div>
+            </div>
+          </div>
+          <div class="col-6 offset-2">
+            <button type="submit" class="btn btn-primary mb-2" style="width:100%">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>

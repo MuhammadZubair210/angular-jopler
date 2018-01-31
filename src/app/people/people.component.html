@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="row">
+    <div class="col-10 col-sm-6 col-md-6 col-xl-6" id="search-box">
+      <div class="search-body">
+        <p style="color:red; text-align:center">{{error}}</p>
+        <form class="form-inline" [formGroup]="myForm" (ngSubmit)="onSubmitSearch(myForm)">
+          <div class="col-12 col-sm-5">
+            
+            <input type="text" class="form-control" id="personJob" [formControl]="myForm.controls['personJob']" placeholder="Person/Skills">
+
+          </div>
+          <div class="col-12 col-sm-5">
+            <input type="text" class="form-control" id="location" [formControl]="myForm.controls['location']" placeholder="Location">
+          </div>
+          <div class="col-12 col-sm-2">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+:host{
+  display: inline-block;
+    width: 100%;
+    margin-bottom: 65px;
+}
+
+.list-group-item {
+    border: 0;
+    background-color: #ffffff54 !important;
+    border-bottom: 2px solid rgb(0, 0, 0) !important;;
+    margin-bottom: 4px;
+}

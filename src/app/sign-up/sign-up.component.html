@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="row">
+    <div class="col-10 col-sm-4 col-md-4 col-xl-4" id="signUp-box">
+
+      <div class="signUp-box-body">
+        <p class="title">Sign Up</p>
+        <p class="signUp-box-msg">Signup with Joppler to get reference checked and receive a score</p>
+        <p style="color:red; text-align:center">{{error}}</p>
+        <form class="signUp" [formGroup]="myForm" (ngSubmit)="onSubmitSignUp(myForm)" novalidate>
+          <div class="form-row">
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-o fa-fw"></i></span>
+                </div>
+                <input type="text" [class.is-valid]="isInValid.firstName=='false'" [class.is-invalid]="isInValid.firstName=='true'" class="form-control form-control-danger"
+                  placeholder="First Name" name="firstName" [formControl]="myForm.controls['firstName']">
+
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-o fa-fw"></i></span>
+                </div>
+                <input type="text" [class.is-valid]="isInValid.lastName=='false'" [class.is-invalid]="isInValid.lastName=='true'" class="form-control form-control-danger"
+                  placeholder="Last Name" name="lastName" [formControl]="myForm.controls['lastName']">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope-o fa-fw"></i></span>
+                </div>
+                <input type="email" [class.is-valid]="isInValid.email=='false'" [class.is-invalid]="isInValid.email=='true'" class="form-control form-control-danger"
+                  placeholder="Email" name="email" [formControl]="myForm.controls['email']">
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-key fa-fw"></i></span>
+                </div>
+                <input type="password" [class.is-valid]="isInValid.pass=='false'" [class.is-invalid]="isInValid.pass=='true'" class="form-control"
+                  placeholder="Password" name="pass" [formControl]="myForm.controls['password']">
+              </div>
+            </div>
+            <div class="custom-control custom-checkbox my-1 mr-sm-2 mb-4">
+              <input type="checkbox" class="custom-control-input" [class.is-valid]="isInValid.terms=='false'" [class.is-invalid]="isInValid.terms=='true'"
+                name="terms" id="terms" [formControl]="myForm.controls['terms']">
+              <label class="custom-control-label" for="terms">I agree to the <a href="/sign_up">Terms & Conditions</a> of Joppler</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mb-2 signinbutton">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="content">
+  <div class="container-fluid mt-5">
+    <div class="row ml-5">
+      <div class="col-11 col-sm-6">
+        <section id="name">
+          <h5 class="h5">{{personDetails.firstname}} {{personDetails.lastname}}</h5>
+          <p class="mb-1 ml-2 ">{{personDetails?.position}} </p>
+          <p class="mb-1 ml-2 font-italic">{{personDetails.address+" "+personDetails.city+" "+personDetails.state+" "+personDetails.country }}</p>
+        </section>
+        <section id="Profile Summary">
+          <h5 class="h5">Profile Summary</h5>
+          <p class="mb-1 ml-2 ">{{personDetails.summary}} </p>
+        </section>
+        <section id="employment">
+          <h5 class="h5">Employment</h5>
+          <div *ngFor="let employment of personDetails.employments" class="mt-3">
+            <p class="mb-1 ml-2 font-weight-bold">{{employment.title}} {{employment.startdate}}-{{employment.enddate}} </p>
+            <p class="mb-1 ml-2 ">{{employment.client}}, {{employment.city}},{{employment.state}} {{employment.country}} </p>
+            <p class="mb-1 mt-4 ml-2">{{employment.responsibilites}}</p>
+          </div>
+        </section>
+        <section id="employment">
+          <h5 class="h5">Education</h5>
+          <div *ngFor="let education of personDetails.Education" class="mt-3">
+            <p class="mb-0 ml-2">{{education.degree}},{{education.school}},{{education.year}},{{education?.country}}</p>
+          </div>
+        </section>
+        <section id="employment">
+          <h5 class="h5">Certification & Training</h5>
+          <div *ngFor="let certification of personDetails.certifications" class="mt-3">
+            <p class="mb-0 ml-2">{{certification.name}}</p>
+          </div>
+        </section>
+        <section id="employment">
+          <h5 class="h5">Specialization & Skills</h5>
+          <div *ngFor="let specialization of personDetails.Skills" class="mt-3">
+            <p class="mb-0 ml-2">{{specialization.name}}</p>
+          </div>
+        </section>
+      </div>
+      <div class="col-11 col-sm-6">
+        <section id="jopplerScore" class="mb-5">
+          <h5 class="h5">Joppler Score</h5>
+          <div *ngFor="let js of joppler_score" class="mt-3">
+            <div class="col-sm-6" style="display: inline-block;">
+              {{js.title}}
+            </div>
+            <div class="col-sm-4" style="display: inline-block;">
+              <div class="progress" style="height:10px;">
+                <div class="progress-bar" [style.width]="(js.score/5)*100 + '%'" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="col-sm-1" style="display: inline-block;">
+              {{js.score}}
+            </div>
+          </div>
+        </section>
+        <section id="ContactJoppler">
+          <div class="row mt-5">
+            <div class="col-11 col-8 offset-3">
+              <button class="btn btn-outline-primary">Contact Joppler Member</button>
+            </div>
+            <div class="col-11 col-8 offset-1 mt-5">
+              <button class="btn btn-link ml-4" style="font-size: calc(.7em + .6vw);">Recommed Joppler Member to someone</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>

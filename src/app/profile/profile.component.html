@@ -1,0 +1,198 @@
+<div class="content">
+  <div class="col-7 offset-2" *ngIf="displayMsg==true">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Your profile has been successfully saved!</h5>
+        <p class="card-text">Click
+          <a routerLink="/employer_verification">here</a> to get a score through reference check by your employers / clients / project sponsors</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 col-sm-6 col-md-6 col-xl-6 offset-sm-2" id="profile-box">
+
+      <div class="profile-box-body">
+        <p class="title">Your contact details</p>
+
+        <form class="profile" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="form-row">
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="first name" [formControl]="myForm.controls['firstName']">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="last name" [formControl]="myForm.controls['lastName']">
+            </div>
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="street address" [formControl]="myForm.controls['address']">
+            </div>
+            <div class="col-12 mb-3">
+              <select class="custom-select" [formControl]="myForm.controls['country']">
+                <option class="opt-font" value="" disabled selected>Country</option>
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+              </select>
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="city" [formControl]="myForm.controls['city']">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="state" [formControl]="myForm.controls['state']">
+            </div>
+            <div class="col-12 mb-3">
+              <input type="number" class="form-control form-control-danger" placeholder="Phone No" [formControl]="myForm.controls['contactNo']">
+            </div>
+            <p class="title">Profile Summary</p>
+            <div class="col-12 mb-3">
+              <textarea id="textarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 163px;width: 100%" placeholder="I am an enterprenuer helping abc to def where ghi are abc. "
+                [formControl]="myForm.controls['summary']"></textarea>
+            </div>
+
+            <p class="title">Your employment/client/project details</p>
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="Job Title" [formControl]="myForm.controls['jobTitle']">
+            </div>
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="Organization/Client/Project" [formControl]="myForm.controls['client']">
+            </div>
+            <div class="col-12 mb-3">
+              <select class="custom-select" [formControl]="myForm.controls['clientCountry']">
+                <option class="opt-font" value="" selected disabled>Country</option>
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+              </select>
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="city" [formControl]="myForm.controls['clientCity']">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="state" [formControl]="myForm.controls['clientState']">
+            </div>
+            <div class="col-6 mb-3">
+                <input name="startDate" id="startDate" class="date-picker form-control form-control-danger" placeholder="Start Date" [formControl]="myForm.controls['clientStartDate']" />
+            </div>
+            <div class="col-6 mb-3">
+                <input name="startDate" id="startDate" class="date-picker form-control form-control-danger" placeholder="End Date" [formControl]="myForm.controls['clientEndDate']" />
+            </div>
+            <div class="col-12 mb-3">
+              <textarea id="textarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 163px;width: 100%" placeholder="Specific Duties & Accomplishments"
+                [formControl]="myForm.controls['clientDuties']"></textarea>
+            </div>
+            <div class="col-12 mb-3 centr">
+              <button class="btn btn-primary mb-2 ml-4 fixwidth">Add more employers</button>
+            </div>
+            <p class="title">Your education details</p>
+            <div class="col-12 mb-3">
+              <select class="custom-select" [formControl]="myForm.controls['educationDegree']" aria-placeholder="country">
+                <option class="opt-font" value="" disabled selected>Education</option>
+                <option value="1">High</option>
+                <option value="2">Masters</option>
+                <option value="3">Phd</option>
+              </select>
+            </div>
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="University Name" [formControl]="myForm.controls['educationInstitute']">
+            </div>
+            <div class="col-12 mb-3">
+              <select class="custom-select" [formControl]="myForm.controls['educationCountry']">
+                <option value="" class="optionDisabled opt-font" disabled selected>Country</option>
+                <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+              </select>
+            </div>
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger" placeholder="Year of Passing" [formControl]="myForm.controls['educationYear']">
+            </div>
+            <div class="col-12 mb-3 centr">
+              <button class="btn btn-primary mb-2 ml-4 fixwidth">Add more education</button>
+            </div>
+
+            <p class="title">Your certification, license & training details</p>
+            <div class="col-12 mb-3">
+              <div formArrayName="certifications" *ngFor="let item of certifications.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="certification" class="form-control form-control-danger" style="width:94%" placeholder="Certifications">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control form-control-danger" placeholder="Certifications" [formControl]="myForm.controls['certifications0']">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("certifications")'>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 mb-3">
+              <div formArrayName="licenses" *ngFor="let item of licenses.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="license" class="form-control form-control-danger" style="width:94%" placeholder="licenses">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control form-control-danger" placeholder="License" formControlName="license0">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("licenses")'>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div formArrayName="trainings" *ngFor="let item of trainings.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="training" class="form-control form-control-danger" style="width:94%" placeholder="Trainings">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control form-control-danger" placeholder="Training" formControlName="trainings0">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("training")'>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control form-control-danger" style="width:94%" placeholder="Other" formControlName="other">
+            </div>
+            <p class="title">Your Specialization & Skill detail</p>
+
+            <div class="col-12 mb-3">
+              <div formArrayName="skills" *ngFor="let item of skills.controls; let i = index;">
+                <div [formGroupName]="i">
+                  <input type="text" formControlName="skill" class="form-control form-control-danger" style="width:94%" placeholder="Skills">
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control form-control-danger" placeholder="Skills" formControlName="skills0">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)='addRow("skills")'>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-8 offset-2 mb-3">
+              <div class="flex-column justify-content-center">
+                <div class="p-2 mr-3" style="text-align: center">{{ResumeName}}</div>
+                <div class="p-2 center">
+                  <input type="file" class="custom-file-input" required #file style="display:hidden;" (change)="updateResumeName(file)">
+                  <a class="link" style="width:80%" type="" (click)="file.click()">Attach Resume</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="centr">
+            <button type="submit" class="btn btn-primary mb-2 fixwidth">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-1 mt-5">
+      <img src="../assets/img/Person-placeholder.jpg" alt="..." class="img-fluid rounded-circle" style="max-width:150px;cursor:pointer"
+        (click)="dp.click()">
+      <input type="file" id="fileLoader" name="image" title="Load File" #dp style="opacity:0; width:0px; height:0px;" (change)="updateProfilePicture(dp)"
+      />
+    </div>
+  </div>
+</div>

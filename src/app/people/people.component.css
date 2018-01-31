@@ -1,0 +1,21 @@
+.form-control
+{
+    width:100%;
+}
+#search-box
+{
+    margin: 80px auto;
+}
+.search-body {
+  padding: 20px;
+  border-top: 0;
+  color: #666;
+  height:inherit;
+}
+.search-msg {
+    text-align: center;
+    color: #6c0e05;
+    font-family: serif;
+   font-size: 15px;
+}
+

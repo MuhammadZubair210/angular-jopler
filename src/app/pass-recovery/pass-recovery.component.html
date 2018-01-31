@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="row">
+    <div class="col-10 col-sm-4 col-md-4 col-xl-4" id="recover-box">
+
+      <div class="recover-box-body">
+        <p class="recover-box-msg">Please enter your email address to recover your password !</p>
+
+        <form class="mt-sm-4" #f="ngForm" (ngSubmit)="onSubmitrecover(f.value)">
+          <div class="form-row">
+            <div class="col-12 mb-3">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope-o fa-fw"></i></span>
+                </div>
+                <input type="email" class="form-control form-control-danger" placeholder="Email" name="email" required ngModel>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn pull-left btn-primary mb-2 submit">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
